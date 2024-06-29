@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  firebase: {
+  firebaseConfig: {
     apiKey: 'AIzaSyAUcG5K-8MDGgHS4Gc4j9U9L1OoYeT2GQI',
     authDomain: 'erp16-de28f.firebaseapp.com',
     projectId: 'erp16-de28f',

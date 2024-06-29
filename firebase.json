@@ -1,1 +1,15 @@
-{}
+{
+  "hosting": [
+    {
+      "target": "erp16app",
+      "public": "dist/erp16app",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
