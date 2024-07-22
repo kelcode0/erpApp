@@ -25,6 +25,7 @@ import * as authActions from '../auth/auth.actions';
 })
 export class AuthService {
   userUnsubscribe!: Unsubscribe;
+  user!: User;
   constructor(
     private auth: Auth,
     private firestore: Firestore,
@@ -43,6 +44,7 @@ export class AuthService {
             let data: any = docUser.data();
             console.log('data', data);
             let user = User.fromFirebase(data);
+            this.user = user;
 
             this.store.dispatch(authActions.setUser({ user }));
           },
