@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
 import { ChartConfiguration } from 'chart.js';
+import { AppStateWhitInOut } from '../ingreso-egreso.reducer';
 
 @Component({
   selector: 'app-estadistica',
@@ -21,7 +22,7 @@ export class EstadisticaComponent implements OnInit {
   public doughnutChartOptions: ChartConfiguration<'doughnut'>['options'] = {
     responsive: false,
   };
-  constructor(private store: Store<AppState>) {}
+  constructor(private store: Store<AppStateWhitInOut>) {}
 
   ngOnInit(): void {
     this.store.select('ingresosEgresos').subscribe(({ items }) => {
