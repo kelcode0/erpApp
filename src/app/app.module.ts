@@ -21,6 +21,8 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import { OrdenIngresoPipe } from './pipes/orden-ingreso.pipe';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -34,9 +36,11 @@ import { environment } from 'src/environments/environment';
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
+    OrdenIngresoPipe,
   ],
   imports: [
     BrowserModule,
+    NgChartsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),

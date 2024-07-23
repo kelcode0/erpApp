@@ -19,6 +19,7 @@ import { AppState } from '../app.reducer';
 import { Store } from '@ngrx/store';
 
 import * as authActions from '../auth/auth.actions';
+import * as inOutActions from '../ingreso-egreso/ingreso-egreso.actions';
 
 @Injectable({
   providedIn: 'root',
@@ -55,6 +56,7 @@ export class AuthService {
       } else {
         this.userUnsubscribe ? this.userUnsubscribe() : null;
         this.store.dispatch(authActions.unSetUser());
+        this.store.dispatch(inOutActions.unsetItems());
       }
     });
   }
